@@ -1,0 +1,54 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<div class="home_container" id="homepage">
+    <main>
+        <section class="row" aria-labelledby="aspnetTitle">
+            <h1 id="title">Welcome to Student Management</h1>
+            <p class="lead">
+                Empower your teaching experience and enhance student management with our innovative
+                online platform. We understand the unique challenges teachers face in the classroom,
+                and that's why we've designed a user-friendly, feature-packed solution to help you succeed.
+            </p>
+        </section>
+        <div>
+            <p><img src="~/Content/Images/pic1.png" alt="Our System" style="width: 800px; height: 500px;"/></p>
+        </div>
+
+        <section id="features">
+            <h2>Key Features</h2>
+            <dl>
+                <dt>
+                    Effortless Student Management
+                </dt>
+                <dd>
+                    Streamline the way you manage student information, from attendance and grades to communication and progress tracking.
+                </dd>
+
+                <dt>
+                    Data-Driven Insights
+                </dt>
+                <dd>
+                    Gain valuable insights with our reporting and analytics tools, helping you make informed decisions to benefit your students.
+                </dd>
+
+                <dt>
+                    Secure and Private
+                </dt>
+                <dd>
+                    We prioritize the security and privacy of your data, giving you peace of mind.
+                </dd>
+            </dl>
+        </section>
+        <br />
+        <section id="cta">
+            <h2>Get Started Today</h2>
+            <p>Join our community of teachers and enhance your classroom management</p>
+
+
+            @Html.ActionLink("Sign Up Now", "Login", "User")
+        </section>
+
+    </main>
+</div>

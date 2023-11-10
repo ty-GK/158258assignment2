@@ -1,0 +1,61 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - Student Management System</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-dark bg-dark">
+        <div class="container">
+            @Html.ActionLink("Student Management System", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+            <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" title="切换导航" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse d-sm-inline-flex justify-content-between">
+                <ul class="navbar-nav flex-grow-1">
+                    <li>@Html.ActionLink("Home", "Index", "Home", new { area = "" }, new { @class = "nav-link" })</li>
+                    <li>@Html.ActionLink("Login", "Login", "User", new { area = "" }, new { @class = "nav-link" })</li>
+                    <li>@Html.ActionLink("Management", "Index", "Students", new { area = "" }, new { @class = "nav-link" })</li>
+                </ul>
+
+                @if (!string.IsNullOrEmpty(Session["Username"] as string))
+                {
+                    <ul class="navbar-nav">
+                        <li>@Html.ActionLink("Logout", "Logout", "User", new { area = "" }, new { @class = "nav-link" })</li>
+                    </ul>
+                }
+            </div>
+        </div>
+    </nav>
+
+
+    <div class="container body-content">
+        @RenderBody()
+        <hr />
+    </div>
+
+    <footer>
+        <p>&copy; @DateTime.Now.Year - Student Management System</p>
+        <address>
+            Developed by Kehan Du.<br>
+            Email: <a href="mailto:email@example.com">email@example.com</a><br>
+        </address>
+        <!-- HTML5 -->
+        <a href="https://validator.w3.org/" target="_blank">W3C Validator API</a>
+        <!-- CSS3 -->
+        <a href="https://jigsaw.w3.org/css-validator/" target="_blank">CSS Validator</a>
+    </footer>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+
+</html>
